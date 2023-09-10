@@ -10,7 +10,7 @@ class CraftingCalculator {
     }
 
     fun calculate(having: Item, needed: Item): CalculatedResult {
-        var total = TotalItem(having.twoStar, having.threeStar, having.fourStar, having.fiveStar)
+        val total = TotalItem(having.twoStar, having.threeStar, having.fourStar, having.fiveStar)
 
         val craftToThreeStar = canCraftAmount(total.two, needed.twoStar) / CRAFT_USE
         total.three += craftToThreeStar
@@ -29,6 +29,5 @@ class CraftingCalculator {
         return CalculatedResult(totalItem, totalItem.enough(needed))
     }
 
-    private fun canCraftAmount(having: Int, needed: Int): Int =
-        max(0, having - needed)
+    private fun canCraftAmount(having: Int, needed: Int): Int = max(0, having - needed)
 }
