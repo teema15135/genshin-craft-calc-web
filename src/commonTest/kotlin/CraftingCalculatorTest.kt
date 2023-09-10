@@ -23,7 +23,8 @@ class CraftingCalculatorTest {
             CalculatedResult(
                 "0 9 9 6".toItem(),
                 Item.Enough(twoStar = false, threeStar = true, fourStar = true, fiveStar = true)
-            ), actual
+            ),
+            actual
         )
     }
 
@@ -34,7 +35,8 @@ class CraftingCalculatorTest {
             CalculatedResult(
                 "3 8 9 6".toItem(),
                 Item.Enough(twoStar = true, threeStar = false, fourStar = true, fiveStar = true)
-            ), actual
+            ),
+            actual
         )
     }
 
@@ -45,7 +47,8 @@ class CraftingCalculatorTest {
             CalculatedResult(
                 "1 9 8 6".toItem(),
                 Item.Enough(twoStar = true, threeStar = true, fourStar = false, fiveStar = true)
-            ), actual
+            ),
+            actual
         )
     }
 
@@ -56,7 +59,8 @@ class CraftingCalculatorTest {
             CalculatedResult(
                 "1 9 9 5".toItem(),
                 Item.Enough(twoStar = true, threeStar = true, fourStar = true, fiveStar = false)
-            ), actual
+            ),
+            actual
         )
     }
 
