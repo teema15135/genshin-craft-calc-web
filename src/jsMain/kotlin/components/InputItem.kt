@@ -1,7 +1,12 @@
 package components
 
+import csstype.rem
+import emotion.react.css
+import org.w3c.dom.HTMLInputElement
 import react.FC
 import react.Props
+import react.dom.events.ChangeEvent
+import react.dom.html.InputMode
 import react.dom.html.InputType
 import react.dom.html.ReactHTML.input
 
@@ -11,11 +16,23 @@ external interface InputItemProps : Props {
 }
 
 val InputItem = FC<InputItemProps> { props ->
+    fun String.filterNonNumeric(): String = replace(Regex("\\D"), "")
+
+    fun handleInputChange(it: ChangeEvent<HTMLInputElement>) {
+        it.target.value
+            .filterNonNumeric()
+            .ifBlank { "0" }
+            .toInt()
+            .let { props.onChange(it) }
+    }
+
     input {
-        type = InputType.number
-        min = 0.0
-        step = 1.0
+        css {
+            fontSize = 1.rem
+        }
+        type = InputType.text
+        inputMode = InputMode.numeric
         value = props.itemAmount.toString()
-        onChange = { props.onChange(it.target.value.toInt()) }
+        onChange = ::handleInputChange
     }
 }
