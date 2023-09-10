@@ -1,3 +1,6 @@
+package components
+
+import Item
 import csstype.AlignSelf
 import emotion.react.css
 import react.FC
@@ -10,8 +13,6 @@ external interface InputStackProps : Props {
     var initialValue: Item
     var onChange: (Item) -> Unit
 }
-
-data class IntStateHolder(var state: Int)
 
 val InputStack = FC<InputStackProps> { props ->
     var twoStarAmount by useState(props.initialValue.twoStar)
