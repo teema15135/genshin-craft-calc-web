@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "GI";
+    src: url("../font/gi.ttf") format("truetype");
+}
+
 body {
+    font-family: "GI", serif;
     background-color: #587CB2;
+}
+
+input {
+    font-family: "GI", serif;
 }

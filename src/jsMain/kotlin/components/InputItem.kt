@@ -1,5 +1,6 @@
 package components
 
+import ColorConst
 import csstype.rem
 import emotion.react.css
 import org.w3c.dom.HTMLInputElement
@@ -28,7 +29,9 @@ val InputItem = FC<InputItemProps> { props ->
 
     input {
         css {
-            fontSize = 1.rem
+            width = 10.rem
+            fontSize = 3.rem
+            color = ColorConst.primaryNavy
         }
         type = InputType.text
         inputMode = InputMode.numeric
